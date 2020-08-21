@@ -43,10 +43,11 @@ public class AppleSearchTest {
 
     @Test(dependsOnMethods = "verifyPageTitle")
     private void verifyOpenedTab() {
-        WebElement imageButton = webDriver.findElement(By.xpath("//*[@id=\"hdtb-msb-vis\"]/*[2]/*"));
-        imageButton.click();
+        WebElement imageTabButton = webDriver.findElement(By.xpath("//*[@id=\"hdtb-msb-vis\"]/*[2]/*"));
+        imageTabButton.click();
         WebElement firstImageElement = webDriver.findElement(By.xpath("//*[@class=\"rg_i Q4LuWd\"]"));
-        Assert.assertTrue(firstImageElement.isDisplayed(), "Images tab is not open.");
+        Assert.assertTrue(firstImageElement.isDisplayed(),
+                "Image element is not displayed, so Image tab is not open.");
     }
 
     @AfterClass
